@@ -46,7 +46,7 @@ class Launch():
         if isCompatible:
             if self.checkSettings(__settings__):
               # if self.isPaired(moonlight, args_dash, ip):
-                    self.stream(self)
+                    self.stream()
         else:
             sef.fail("Your current platform is incompatible with this add-on !")
 

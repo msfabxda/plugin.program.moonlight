@@ -46,7 +46,7 @@ class Launch():
         if isCompatible:
             if self.checkSettings(__settings__):
               # if self.isPaired(moonlight, args_dash, ip):
-                    self.stream(self,moonlight, ip, reso, fps, fullscreen, stream)
+                    self.stream(self,moonlight, ip, reso, fps,  stream)
         else:
             sef.fail("Your current platform is incompatible with this add-on !")
 
@@ -67,7 +67,7 @@ class Launch():
 
 
 
-    def stream(self,moonlight, ip, reso, fps, fullscreen, stream):
+    def stream(self,moonlight, ip, reso, fps,  stream):
 
         __dialog__.notification(__name__, "Streaming from host...", xbmcgui.NOTIFICATION_INFO, 5000)
 

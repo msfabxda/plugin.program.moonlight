@@ -80,8 +80,8 @@ class Launch():
 
     def isPaired(self, moonlight, dash, ip):
 
-        __dialog__.notification(__name__, "Pairing to host...", xbmcgui.NOTIFICATION_INFO, 5000)
-
+        __dialog__.notification(__name__,'"'+moonlight+'" '+'pair '+ip, xbmcgui.NOTIFICATION_INFO, 5000)
+        
         pairing = subprocess.Popen('"'+moonlight+'" '+'pair '+ip , stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         sys.stdout.flush()
         for line in iter(pairing.stdout.readline, b''):

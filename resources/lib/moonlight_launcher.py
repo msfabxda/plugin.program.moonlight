@@ -46,7 +46,7 @@ class Launch():
         if isCompatible:
             if self.checkSettings(__settings__):
               # if self.isPaired(moonlight, args_dash, ip):
-                    self.stream(self,moonlight, ip, reso, fps)
+                    self.stream(self)
         else:
             sef.fail("Your current platform is incompatible with this add-on !")
 
@@ -67,11 +67,11 @@ class Launch():
 
 
 
-    def stream(self,moonlight, ip, reso, fps):
+    def stream(self):
 
         __dialog__.notification(__name__, "Streaming from host...", xbmcgui.NOTIFICATION_INFO, 5000)
 
-        streaming = subprocess.Popen(['"'+moonlight+'"','"stream"', '"'+ip+'"','"-'+reso+'"','"-'+fps+'"'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        streaming = subprocess.Popen(['"/usr/bin/moonlight"','"stream"', '"192.168.1.164"','"-1080"','"-60fps"'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         sys.stdout.flush()
         for line in iter(streaming.stdout.readline, b''):
             sys.stdout.flush()

@@ -73,16 +73,16 @@ class Launch():
 
         __dialog__.notification(__name__, "Streaming from host...", xbmcgui.NOTIFICATION_INFO, 5000)
 
-        streaming = subprocess.Popen('"'+moonlight+' '+stream+' '+ip+' -'+reso+' -'+fps+fullscreen, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        streaming = subprocess.Popen('"'+moonlight+' '+stream+' '+ip+' -'+reso+' -'+fps+fullscreen + '"', stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         sys.stdout.flush()
         for line in iter(streaming.stdout.readline, b''):
             sys.stdout.flush()
 
-    def isPaired(self, java, moonlight, dash, ip):
+    def isPaired(self, moonlight, dash, ip):
 
         __dialog__.notification(__name__, "Pairing to host...", xbmcgui.NOTIFICATION_INFO, 5000)
 
-        pairing = subprocess.Popen('"'+moonlight+' '+dash+'pair '+ip, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        pairing = subprocess.Popen('"'+moonlight+' '+dash+'pair '+ip +'"', stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         sys.stdout.flush()
         for line in iter(pairing.stdout.readline, b''):
             sys.stdout.flush()

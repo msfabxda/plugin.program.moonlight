@@ -45,7 +45,7 @@ class Launch():
 
         if isCompatible:
             if self.checkSettings(__settings__):
-                if self.isPaired(moonlight, args_dash, ip):
+              # if self.isPaired(moonlight, args_dash, ip):
                     self.startProcess( moonlight, args_dash, ip, reso, fps, fullscrn, strm_cmd)
                 else:
                     self.fail("Connection error - Can't pair to host")

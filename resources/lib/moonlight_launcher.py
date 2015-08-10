@@ -71,7 +71,7 @@ class Launch():
 
         __dialog__.notification(__name__, "Streaming from host...", xbmcgui.NOTIFICATION_INFO, 5000)
 
-        streaming = subprocess.Popen(['"/usr/bin/moonlight"','"stream"', '"192.168.1.164"','"-1080"','"-60fps"'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        streaming = subprocess.Popen(['/usr/bin/moonlight','stream', '192.168.1.164','-1080','-60fps'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         sys.stdout.flush()
         for line in iter(streaming.stdout.readline, b''):
             sys.stdout.flush()
